@@ -15,6 +15,7 @@ void setup() {
   // --- Prepare TLS network ---
   TLSSocketNetwork net;
   net.setCACert((const unsigned char*)rootCACert, strlen(rootCACert));
+  net.connect("mqtt.example.com", 8883);  // replace with your MQTT broker
 
   // --- Bind MQTT client to our TLS network ---
   // Template args: <Network, Timer, MAX_PACKET=100, MAX_HANDLERS=5>
